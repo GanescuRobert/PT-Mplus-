@@ -58,6 +58,6 @@ int main()
 	yyin = fopen("input.csrc", "rt");
 	while ((tokenValue = yylex()) != END)
 	{
-		printf(" --- ID: %d --- Value: %s \n", tokenValue, lexUnits[tokenValue]);
+		printf(" --- ID: %d --- Value: %s \n", tokenValue, lexUnits[tokenValue-258]);
 	}
 }

@@ -1,20 +1,45 @@
 # PT-Mplus-
 
+Flex and Bison are tools for building programs that handle structured input.\
+Before install be sure in your path doesn't exist spaces like 'Program files'.\
+Add 'GnuWin32/bin' & 'msys64\mingw64\bin to path environment.
+
+**Installers**\
+Msys2 - gcc
+```
+https://www.msys2.org/
+```
+Bison
+```
+http://gnuwin32.sourceforge.net/packages/bison.htm
+```
+Flex
+```
+http://gnuwin32.sourceforge.net/packages/flex.htm
+```
+![alt text](buildingCompiler.png)
+To generate *c.tab.c* & *c.tab.h*:
+```
+bison -d c.y
+```
+then add **#include "c.tab.h"** in *lexer.l*.
+
 To generate *lex.yy.c*:
 ```
 flex lexer.l
 ```  
-then add **#includ "symbols.h"** in it.
 
-In lex.yy.c you have to add **#include "lex.yy.c"**.
-
-To generate *lexer.exe* and run it:
+To generate *MplusMinus.exe*:
 ```
-gcc -o lexer lexer.c
-lexer.exe
+gcc -o MplusMinus main.c
 ```
 
-To generate *c.tab.c* & *c.tab.h*:
+To run:
 ```
-bison -d c.y
+MplusMinus.exe
+```
+
+References:
+```
+https://silcnitc.github.io/ywl.html
 ```

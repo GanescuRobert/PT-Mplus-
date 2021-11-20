@@ -3,10 +3,12 @@ alpha        [a-zA-Z]
 
 %{
 #include <stdio.h>
-#include "symbols.h"
+#include "c.tab.h"
 
 void count();
 void warning();
+void comment();
+int check_type();
 %}
 
 %%
@@ -74,12 +76,12 @@ void warning();
 
 %%
 
-yywrap()
+int yywrap()
 {
     return(1);
 }
 
-comment()
+void comment()
 {
     char c, c1;
 
